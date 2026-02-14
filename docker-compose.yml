@@ -1,0 +1,21 @@
+services:
+  lampac-go:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: go-lampa:0.1
+    container_name: go-lampa
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      LAMPAC_GO_ADDR: "0.0.0.0:18118"
+      LAMPAC_GO_REPO_ROOT: "/opt/lampac"
+      LAMPAC_GO_CACHE_DIR: "/opt/lampac/cache"
+      LAMPAC_GO_LOCAL_CORE: "${LAMPAC_GO_LOCAL_CORE:-true}"
+      LAMPAC_GO_FALLBACK_ENABLE: "${LAMPAC_GO_FALLBACK_ENABLE:-false}"
+    ports:
+      - "${LAMPAC_GO_PORT:-18118}:18118"
+    volumes:
+      - ./config:/opt/lampac/config
+      - ./cache:/opt/lampac/cache

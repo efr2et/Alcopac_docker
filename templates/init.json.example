@@ -1,0 +1,17 @@
+{
+  "Videoseed": {
+    "token": null
+  },
+  "Collaps": {
+    "token": null
+  },
+  "Mirage": {
+    "token": null
+  },
+  "TelegramAuth": {
+    "enable": false,
+    "bot_token": "",
+    "admin_id": 0,
+    "bot_name": ""
+  }
+}
