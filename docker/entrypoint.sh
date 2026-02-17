@@ -23,13 +23,13 @@ mkdir -p \
 # module (manifest.json, JacRed.conf)
 if [ -d "$DEFAULTS_DIR/module" ] && [ -z "$(ls -A "$APP_DIR/module" 2>/dev/null)" ]; then
   echo "[entrypoint] Инициализация module/ из defaults..."
-  cp -a "$DEFAULTS_DIR/module/"* "$APP_DIR/module/"
+  cp -a "$DEFAULTS_DIR/module/." "$APP_DIR/module/"
 fi
 
 # torrserver (accs.db и т.д.)
 if [ -d "$DEFAULTS_DIR/torrserver" ] && [ -z "$(ls -A "$APP_DIR/torrserver" 2>/dev/null)" ]; then
   echo "[entrypoint] Инициализация torrserver/ из defaults..."
-  cp -a "$DEFAULTS_DIR/torrserver/"* "$APP_DIR/torrserver/"
+  cp -a "$DEFAULTS_DIR/torrserver/." "$APP_DIR/torrserver/"
 fi
 
 # ── конфигурация ──
